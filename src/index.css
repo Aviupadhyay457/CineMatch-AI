@@ -118,3 +118,18 @@ input:focus {
 .generate-movies-btn{
   padding: 1rem 2rem;
 }
+.output{
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.output p{
+  margin-top: 1rem;
+}
+.output li{
+  margin-top: 1rem;
+}
+.output ul{
+  margin-bottom: 1rem;
+}
