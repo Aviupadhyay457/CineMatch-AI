@@ -1,11 +1,11 @@
-export default function GenerateMovies(){
+export default function GenerateMovies(props){
     return(
         <div className="generate-movies-container">
             <div>
                 <h3>Generate Movies?</h3>
                 <p>Generate movies based on your preferences.</p>
             </div>
-            <button className="generate-movies-btn">Get Movies</button>
+            <button className="generate-movies-btn" onclick={props.getDataFromAI} >Get Movies</button>
         </div>
     )
 }

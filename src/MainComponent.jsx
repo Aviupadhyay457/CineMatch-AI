@@ -1,10 +1,11 @@
 import React from "react"
 import ConditionList from "./Components/ConditionList"
 import GenerateMovies from "./Components/GenerateMovies"
+import MoviesData from "./MoviesData"
 export default function MainComponent(){
 
     const [ConditionArr, setConditionArr]=React.useState([])
-    
+    const[movieDataString, setMovieDataString]=React.useState("")
 
     function conditionArrUpdate(val){
         setConditionArr(function(arr){
@@ -26,6 +27,12 @@ export default function MainComponent(){
         
     }
 
+    function getDataFromAI(){
+        
+    }
+
+
+
     return(
         <main>
             <form action={addCondition}>
@@ -36,9 +43,8 @@ export default function MainComponent(){
                 ConditionArr={ConditionArr}
                 conditionArrUpdateTwo={conditionArrUpdateTwo}
             />}
-            {ConditionArr.length>2 &&<GenerateMovies/>}
-
-
+            {ConditionArr.length>2 &&<GenerateMovies getDataFromAI={getDataFromAI}/>}
+            {movieDataString&&<MoviesData movieDataString={movieDataString}/>}
         </main>
     )
 }
