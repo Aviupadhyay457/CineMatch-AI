@@ -27,8 +27,20 @@ export default function MainComponent(){
         
     }
 
-    function getDataFromAI(){
-        
+    async function getDataFromAI(){
+        const res=await fetch("/.netlify/functions/getMovies",
+            {
+                method:'POST',
+                body:JSON.stringify(ConditionArr),
+                headers: {"Content-Type": "application/json"},
+            }
+
+        )
+        const MoviesMarkdownObj=await res.json()
+        let MoviesMarkdown=MoviesMarkdownObj.choices[0].message.content
+        setMovieDataString(MoviesMarkdown)
+        console.log(MoviesMarkdown)
+
     }
 
 

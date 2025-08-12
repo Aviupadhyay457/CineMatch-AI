@@ -1,6 +1,8 @@
-export default function MoviesData(){
+import ReactMarkdown from 'react-markdown'
+export default function MoviesData(props){
     return(
-        <sections>
-        </sections>
+        <ReactMarkdown>
+            {props.movieDataString}
+        </ReactMarkdown>
     )
 }
