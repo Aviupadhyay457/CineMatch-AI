@@ -1,6 +1,9 @@
 // import dotenv from "dotenv";
 // dotenv.config()
 
+const dotenv = require('dotenv');
+dotenv.config()
+
 const { HfInference } = require('@huggingface/inference');
 
 // import { HfInference } from '@huggingface/inference'
