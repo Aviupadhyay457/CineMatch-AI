@@ -38,6 +38,14 @@ export async function handler(event) {
     }
     catch(err){
         console.log("there is an error",err)
+        return {
+            statusCode: 500,
+            headers,
+            body: JSON.stringify({ 
+                error: 'Internal server error', 
+                message: err.message 
+            })
+        }
     }
 
     // return response.choices[0].message.content
