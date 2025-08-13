@@ -17,7 +17,7 @@ Format your response in markdown to make it easier to render to a web page
 `
 
 
-export async function handler(event) {
+exports.handler = async (event) =>  {
     try{
     const inputArr=JSON.parse(event.body)
     const inputStr=inputArr.join(" , ")
@@ -41,7 +41,7 @@ export async function handler(event) {
         console.log("there is an error",err)
         return {
             statusCode: 500,
-            headers,
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ 
                 error: 'Internal server error', 
                 message: err.message 
