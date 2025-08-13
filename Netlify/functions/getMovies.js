@@ -17,6 +17,7 @@ Format your response in markdown to make it easier to render to a web page
 
 
 export async function handler(event) {
+    try{
     const inputArr=JSON.parse(event.body)
     const inputStr=inputArr.join(" , ")
 
@@ -34,5 +35,10 @@ export async function handler(event) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(response),      
         };
+    }
+    catch(err){
+        console.log("there is an error",err)
+    }
+
     // return response.choices[0].message.content
 }
